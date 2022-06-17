@@ -1,0 +1,23 @@
+{
+  "name": "@blueskyfish/app-starter",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {},
+  "author": {
+    "name": "Blueskyfish",
+    "email": "blueskyfish@blueskyfish.de",
+    "url": "https://blueskyfish.de/"
+  },
+  "private": true,
+  "devDependencies": {
+    "@nrwl/angular": "^14.3.6",
+    "@nrwl/cli": "13.10.5",
+    "@nrwl/js": "13.10.5",
+    "@nrwl/nest": "^14.3.6",
+    "@nrwl/workspace": "13.10.5",
+    "@types/node": "16.11.7",
+    "nx": "13.10.5",
+    "prettier": "^2.5.1",
+    "typescript": "~4.6.2"
+  }
+}
