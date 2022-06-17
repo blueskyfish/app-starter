@@ -1,10 +1,10 @@
-import { OpenApiSetting } from '@blueskyfish/backend-commons';
 import { toUpper } from '@blueskyfish/grundel';
 import { Logger, NotFoundException, ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { Request, Response, NextFunction} from 'express';
+import { NextFunction, Request, Response } from 'express';
+import { OpenApiSetting } from '../openapi';
 import { BootstrapOptions } from './bootstrap-options';
 
 /**

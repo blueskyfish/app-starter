@@ -44,7 +44,7 @@ describe('Lodash', () => {
     });
 
     it('should not be a string', () => {
-      let ss = undefined;
+      const ss = undefined;
       expect(isString(null)).toBeFalsy();
       expect(isString(ss)).toBeFalsy();
       expect(isString(1)).toBeFalsy();
@@ -206,7 +206,7 @@ describe('Lodash', () => {
       expect(getTypeFrom(null)).toEqual('null');
     });
     it('should return "undefined"', () => {
-      let ss = undefined;
+      const ss = undefined;
       expect(getTypeFrom(ss)).toEqual('undefined');
     });
     it('should return "string"', () => {

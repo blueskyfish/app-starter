@@ -33,7 +33,7 @@ export async function configLoader(configPathEnv: string): Promise<ConfigObject>
  * @return the expanded config object
  */
 function replaceConfig(config: ConfigObject): ConfigObject {
-  let dict: ConfigObject = {};
+  const dict: ConfigObject = {};
   Object.keys(config).forEach((key: string) => {
     const value = config[key];
     switch (typeof value) {

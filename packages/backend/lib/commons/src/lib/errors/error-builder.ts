@@ -28,6 +28,6 @@ export function forbidden<T extends ErrorItem>(error: T, description?: string): 
   return new ForbiddenException(error, description);
 }
 
-export function internalError<T extends ErrorItem>(error: T, description?: string): HttpException {
+export function internalError<T extends ErrorItem>(error: T): HttpException {
   return new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR);
 }

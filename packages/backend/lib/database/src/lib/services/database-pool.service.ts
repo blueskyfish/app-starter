@@ -41,7 +41,7 @@ export class DatabasePoolService implements OnApplicationBootstrap, OnApplicatio
     this.logger.log('Created database pool');
   }
 
-  async onApplicationShutdown(signal?: string): Promise<any> {
+  async onApplicationShutdown(/*signal?: string*/): Promise<any> {
     this.logger.log('Stopping database pool...');
     await this.pool?.shutdown();
     this.logger.log('Stopped database pool');
