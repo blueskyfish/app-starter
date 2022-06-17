@@ -1,7 +1,7 @@
-import { BackendBootstrapModule } from '@blueskyfish/backend-commons';
+import { AuthMiddleware, BackendCommonsModule } from '@blueskyfish/backend-commons';
 import { BackendDatabaseModule } from '@blueskyfish/backend-database';
 import { BackendPlatformModule, configLoader } from '@blueskyfish/backend-platform';
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 
 /**
@@ -15,11 +15,23 @@ import { ConfigModule } from '@nestjs/config';
       load: [() => configLoader('CONFIG_PATH')]
     }),
 
-    BackendBootstrapModule,
+    BackendCommonsModule,
     BackendPlatformModule,
     BackendDatabaseModule,
   ],
   controllers: [],
   providers: [],
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+
+  configure(consumer: MiddlewareConsumer): any {
+    const publicRoutes = ['about', 'alive', 'check'];
+
+    consumer
+      .apply(AuthMiddleware)
+      .exclude(...publicRoutes.map((route) => `/${route}`))
+      .forRoutes(
+        // Add here the controllers
+      )
+  }
+}

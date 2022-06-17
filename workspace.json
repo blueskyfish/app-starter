@@ -3,8 +3,9 @@
   "projects": {
     "backend-app-user-api": "packages/backend/app/user-api",
     "backend-lib-commons": "packages/backend/lib/commons",
-    "node-lib-grundel": "packages/node/lib/grundel",
+    "backend-lib-database": "packages/backend/lib/database",
     "backend-lib-platform": "packages/backend/lib/platform",
-    "backend-lib-database": "packages/backend/lib/database"
+    "node-lib-commons": "packages/node/lib/commons",
+    "node-lib-grundel": "packages/node/lib/grundel"
   }
 }

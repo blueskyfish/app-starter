@@ -32,6 +32,12 @@
                 "onlyDependOnLibsWithTags": [
                   "backend:lib", "node:lib"
                 ]
+              },
+              {
+                "sourceTag": "node:lib",
+                "onlyDependOnLibsWithTags": [
+                  "node:lib"
+                ]
               }
             ]
           }
@@ -46,7 +52,9 @@
       "extends": [
         "plugin:@nrwl/nx/typescript"
       ],
-      "rules": {}
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
     },
     {
       "files": [
