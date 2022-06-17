@@ -1,1 +1,5 @@
-{"name":"@blueskyfish/backend-commons","version":"0.0.1","type":"commonjs"}
+{
+  "name": "@blueskyfish/backend-commons",
+  "version": "0.0.1",
+  "type": "commonjs"
+}
