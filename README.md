@@ -1,9 +1,9 @@
 
 # Blueskyfish - App Starter
 
-> A application starter kit with [Angular](https://angular.io) and [NestJS](https://docs.nestjs.com).
+> An application starter kit with <https://angular.io> and <https://docs.nestjs.com>.
 >
-> The project is managed with the [nx](https://nx.dev)
+> The project is managed with the <https://nx.dev>
 
 
 ## Require
