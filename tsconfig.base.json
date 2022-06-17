@@ -26,6 +26,9 @@
       ],
       "@blueskyfish/backend-platform": [
         "packages/backend/lib/platform/src/index.ts"
+      ],
+      "@blueskyfish/backend-database": [
+        "packages/backend/lib/database/src/index.ts"
       ]
     }
   },

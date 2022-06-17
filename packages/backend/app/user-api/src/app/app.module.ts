@@ -1,8 +1,8 @@
 import { BackendBootstrapModule } from '@blueskyfish/backend-commons';
-import { BackendPlatformModule } from '@blueskyfish/backend-platform';
+import { BackendDatabaseModule } from '@blueskyfish/backend-database';
+import { BackendPlatformModule, configLoader } from '@blueskyfish/backend-platform';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { configLoader } from '../../../../lib/platform/src/lib/config';
 
 /**
  * Main module for backend **UserApi**
@@ -14,8 +14,10 @@ import { configLoader } from '../../../../lib/platform/src/lib/config';
       cache: true,
       load: [() => configLoader('CONFIG_PATH')]
     }),
+
     BackendBootstrapModule,
     BackendPlatformModule,
+    BackendDatabaseModule,
   ],
   controllers: [],
   providers: [],

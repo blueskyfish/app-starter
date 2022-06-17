@@ -43,6 +43,59 @@ The applications need some global environments on the developer machine:
 
 
 
+## Configuration
+
+| Name                  | Type     | Required         | Description                                                                                  |
+|-----------------------|----------|------------------|----------------------------------------------------------------------------------------------|
+| `http.host`           | string   | no (`localhost`) | The hostname for listening the http incomes                                                  |
+| `http.port`           | number   | no (`19050`)     | The host port for listening the http incomes                                                 |
+| `db.host`             | string   | no (`localhost`) | The hostname of the database server                                                          |
+| `db.port`             | number   | no (`3306`)      | The port of the database server                                                              |
+| `db.user`             | string   | yes              | User to access database.                                                                     |
+| `db.database`         | string   | yes              | Default database to use when establishing the connection.                                    |
+| `db.password`         | string   | yes              | The database user password                                                                   |
+| `db.connectTimeout`   | number   | no (`10000`)     | Sets the connection timeout in milliseconds. Default `10000` (10 sec).                       |
+| `db.acquireTimeout`   | number   | no (`10000`)     | Sets the connection timeout in milliseconds. Default `10000` (10 sec).                       |
+| `db.debug`            | boolean  | no (`false`)     | This will print all incoming and outgoing packets on stdout. Default: `false`.               |
+| `db.tables`           | TableMap | yes              | The table map between the generic table name and the real name                               |
+| `crypto.publicKey`    | string   | yes              | The public key for the en- or decryption                                                     |
+| `crypto.privateKey`   | string   | yes              | The private key for the en- or decryption                                                    |
+| `crypto.digestSecret` | string   | yes              | The salt for the hashing an string                                                           |
+| `auth.timeout`        | number   | no (`0`)         | The auth timeout before **renewal** the auth token (`0` not check renewal, > 0 is the hours. |
+| `system.aboutPath`    | string   | yes              | The filename of the about json object.                                                       |
+| `queue.host`          | string   | no (`127.0.0.1`) | The hostname of the redis server                                                             |
+| `queue.port`          | number   | no (`6379`)      | The host port of the redis server                                                            |
+|                       |          |                  |                                                                                              |
+
+
+## Database
+
+### SQL Statements
+
+The sql statements are generic of the table name. The names are defines in the config file (*Database Section*).
+
+
+```sql
+SELECT *
+FROM table(users)
+WHERE email = {email}
+```
+
+* The real table name is looked up from the config of database (`table(users)` is found as **'`users`'**).
+* The `{email}` is replaced as object attribute
+
+```yaml
+# Database Section
+db:
+  # ...
+  tables:
+    users: '`users`'
+    userSecrets: '`user_secrets`'
+    userPermissions: '`user_permissions`'
+```
+
+
+
 ## Licence
 
 ```

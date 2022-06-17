@@ -13,3 +13,16 @@ crypto:
   publicKey: '${APP_CRYPTO_PUBLIC_KEY}'
   privateKey: '${APP_CRYPTO_PRIVATE_KEY}'
   digestSecret: '${APP_CRYPTO_DIGEST_SECRET}'
+
+# Database Section
+db:
+  host: localhost
+  port: 28306
+  user: '${APP_DB_USER}'
+  database: '${APP_DB_DATABASE}'
+  password: '${APP_DB_PASSWORD}'
+  debug: false
+  tables:
+    users: '`users`'
+    userSecrets: '`user_secrets`'
+    userPermissions: '`user_permissions`'

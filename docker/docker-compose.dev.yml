@@ -1,0 +1,51 @@
+#
+# Docker compose for the local develop environment
+#
+# TODO Adjust the container name and the database password
+#
+# !! Don't use this docker-compose file in the prod environment !!
+#
+
+version: '3.5'
+
+services:
+  db:
+    image: mariadb:latest
+    container_name: blueskyfish_app_starter_database
+    restart: unless-stopped
+    ports:
+      - "28306:3306"
+    volumes:
+      - ./var/mariadb:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=blueskyfish1234
+    networks:
+      - blueskyfish-net
+
+  # PhpMyAdmin as "admin"
+  admin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: blueskyfish_app_starter_admin
+    restart: unless-stopped
+    ports:
+      - "28008:80"
+    links:
+      - db:db
+    networks:
+      - blueskyfish-net
+    depends_on:
+      - db
+
+  # Redis (Queue)
+  redis:
+    image: redis:latest
+    container_name: blueskyfish_app_starter_queue
+    restart: unless-stopped
+    ports:
+      - "28379:6379"
+    networks:
+      - blueskyfish-net
+
+networks:
+  blueskyfish-net:
+    driver: bridge

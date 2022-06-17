@@ -2,7 +2,11 @@
   "name": "@blueskyfish/app-starter",
   "version": "0.0.1",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "docker:build": "docker compose -f ./docker/docker-compose.dev.yml build --no-cache",
+    "docker:serve": "docker compose -p app-starter -f ./docker/docker-compose.dev.yml up -d --quiet-pull",
+    "docker:stop": "docker compose -p app-starter -f ./docker/docker-compose.dev.yml down"
+  },
   "author": {
     "name": "Blueskyfish",
     "email": "blueskyfish@blueskyfish.de",
@@ -23,6 +27,7 @@
     "@nrwl/workspace": "14.3.6",
     "@types/jest": "27.4.1",
     "@types/js-yaml": "^4.0.5",
+    "@types/mysql": "^2.15.21",
     "@types/node": "16.11.7",
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "~5.24.0",
@@ -45,6 +50,7 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
     "js-yaml": "^4.1.0",
+    "mysql": "^2.18.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.0.0",
     "swagger-ui-express": "^4.4.0",
