@@ -17,12 +17,12 @@
 
 ## Setup
 
-* Clone the git repository from `https://github.com/blueskyfish/app-starter`
+* Clone the git repository from `https://github.com/blueskyfish/app-starter.git`
 * Change into the project directory
 * Install the node modules with `npm ci` or `npm i`
 
 ```shell
-$ git clone https://github.com/blueskyfish/app-starter
+$ git clone https://github.com/blueskyfish/app-starter.git
 $ cd app-starter
 $ npm ci
 ```
