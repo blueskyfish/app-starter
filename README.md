@@ -27,6 +27,20 @@ $ cd app-starter
 $ npm ci
 ```
 
+### Adjust To-do-Liste
+
+The project contains some **TODO**s for adjust the settings or labels
+
+### Global Environment
+
+The applications need some global environments on the developer machine:
+
+**Crypto Settings**
+
+* `APP_CRYPTO_PUBLIC_KEY`
+* `APP_CRYPTO_PRIVATE_KEY`
+* `APP_CRYPTO_DIGEST_SECRET`
+
 
 
 ## Licence

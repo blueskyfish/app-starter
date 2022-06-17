@@ -1,0 +1,46 @@
+{
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/node/lib/grundel/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/node/lib/grundel",
+        "tsConfig": "packages/node/lib/grundel/tsconfig.lib.json",
+        "packageJson": "packages/node/lib/grundel/package.json",
+        "main": "packages/node/lib/grundel/src/index.ts",
+        "assets": [
+          "packages/node/lib/grundel/*.md"
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/node/lib/grundel/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/packages/node/lib/grundel"
+      ],
+      "options": {
+        "jestConfig": "packages/node/lib/grundel/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": [
+    "node:lib"
+  ]
+}

@@ -1,0 +1,15 @@
+#
+# Example configuration for "UserApi"
+#
+# TODO Adjust the settings
+
+# Http Section
+http:
+  host: localhost
+  port: 28050
+
+# Crypto Section
+crypto:
+  publicKey: '${APP_CRYPTO_PUBLIC_KEY}'
+  privateKey: '${APP_CRYPTO_PRIVATE_KEY}'
+  digestSecret: '${APP_CRYPTO_DIGEST_SECRET}'

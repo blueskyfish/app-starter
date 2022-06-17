@@ -1,4 +1,9 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "backend-app-user-api": "packages/backend/app/user-api",
+    "backend-lib-commons": "packages/backend/lib/commons",
+    "node-lib-grundel": "packages/node/lib/grundel",
+    "backend-lib-platform": "packages/backend/lib/platform"
+  }
 }

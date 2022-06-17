@@ -19,5 +19,6 @@
         ]
       }
     }
-  }
+  },
+  "defaultProject": "backend-app-user-api"
 }
