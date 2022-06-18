@@ -4,7 +4,7 @@
   "projectType": "application",
   "targets": {
     "deploy": {
-      "builder": "@nrwl/workspace:run-commands",
+      "executor": "@nrwl/workspace:run-commands",
       "options": {
         "commands": [
           "nx run backend-app-user-api:build:production",
@@ -15,16 +15,12 @@
     },
     "build": {
       "executor": "@nrwl/node:webpack",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/backend/app/user-api",
         "main": "packages/backend/app/user-api/src/main.ts",
         "tsConfig": "packages/backend/app/user-api/tsconfig.app.json",
-        "assets": [
-          "packages/backend/app/user-api/src/assets"
-        ],
+        "assets": ["packages/backend/app/user-api/src/assets"],
         "generatePackageJson": true
       },
       "configurations": {
@@ -49,27 +45,19 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "packages/backend/app/user-api/**/*.ts"
-        ]
+        "lintFilePatterns": ["packages/backend/app/user-api/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/packages/backend/app/user-api"
-      ],
+      "outputs": ["coverage/packages/backend/app/user-api"],
       "options": {
         "jestConfig": "packages/backend/app/user-api/jest.config.ts",
         "passWithNoTests": true
       }
     }
   },
-  "tags": [
-    "backend:app"
-  ]
+  "tags": ["backend:app"]
 }

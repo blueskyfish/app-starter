@@ -1,0 +1,97 @@
+{
+  "projectType": "application",
+  "sourceRoot": "packages/frontend/app/user/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/frontend/app/user",
+        "index": "packages/frontend/app/user/src/index.html",
+        "main": "packages/frontend/app/user/src/main.ts",
+        "polyfills": "packages/frontend/app/user/src/polyfills.ts",
+        "tsConfig": "packages/frontend/app/user/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "packages/frontend/app/user/src/favicon.ico",
+          "packages/frontend/app/user/src/assets"
+        ],
+        "styles": ["packages/frontend/app/user/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "packages/frontend/app/user/src/environments/environment.ts",
+              "with": "packages/frontend/app/user/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "frontend-app-user:build:production"
+        },
+        "development": {
+          "browserTarget": "frontend-app-user:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 28080,
+        "proxyConfig": "packages/frontend/app/user/proxy.conf.json"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "frontend-app-user:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/frontend/app/user/**/*.ts",
+          "packages/frontend/app/user/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/frontend/app/user"],
+      "options": {
+        "jestConfig": "packages/frontend/app/user/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["frontend:app"]
+}

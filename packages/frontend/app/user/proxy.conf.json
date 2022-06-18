@@ -1,0 +1,10 @@
+{
+  "/api/user": {
+    "target": "http://localhost:28050",
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/api/user": ""
+    }
+  }
+}
