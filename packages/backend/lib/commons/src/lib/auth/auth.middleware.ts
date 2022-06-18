@@ -1,6 +1,6 @@
 import { CryptoService } from '@blueskyfish/backend-platform';
 import { AuthUserRenewal, AuthUserRequired } from '@blueskyfish/commons';
-import { Injectable, Logger, NestMiddleware, OnApplicationBootstrap } from '@nestjs/common';
+import { HttpException, Injectable, Logger, NestMiddleware, OnApplicationBootstrap } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { NextFunction, Request, Response } from 'express';
 import { DateTime } from 'luxon';
@@ -18,6 +18,14 @@ const authUserRequired = () => unauthorized({
   },
   'Unauthorized access'
 );
+
+/**
+ * Renewal the token is required
+ */
+const authUserRenewal = () => unauthorized({
+  code: AuthUserRenewal,
+  message: 'User needs renew authorization'
+});
 
 /**
  * Middleware for the consumer of {@link AuthUser}. This service does not renew the authenticity
@@ -53,10 +61,7 @@ export class AuthMiddleware implements NestMiddleware, OnApplicationBootstrap {
         if (this.renewRequired(authUser)) {
           this.logger.log(`Renew required "${ authUser.id }"`);
 
-          return next(unauthorized({
-            code: AuthUserRenewal,
-            message: 'User needs renew authorization'
-          }));
+          return next(authUserRenewal());
         }
 
         setAuthUser(req, authUser);
@@ -64,7 +69,8 @@ export class AuthMiddleware implements NestMiddleware, OnApplicationBootstrap {
         return next();
 
       } catch (e: any) {
-        if (e instanceof Error) {
+        if (e instanceof Error && !(e instanceof HttpException)) {
+          // internal error
           return next(internalError({
             code: 'auth.internalError',
             message: e.message
