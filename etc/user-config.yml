@@ -26,3 +26,13 @@ db:
     users: '`users`'
     userSecrets: '`user_secrets`'
     userPermissions: '`user_permissions`'
+
+# Auth Section
+auth:
+  # Renewal the auth token (0 no check ; > 0 the hours)
+  timeout: 0
+
+# Queue Section
+queue:
+  host: localhost
+  port: 28379

@@ -1,6 +1,7 @@
 import { AuthMiddleware, BackendCommonsModule } from '@blueskyfish/backend-commons';
 import { BackendDatabaseModule } from '@blueskyfish/backend-database';
 import { BackendPlatformModule, configLoader } from '@blueskyfish/backend-platform';
+import { BackendQueueModule } from '@blueskyfish/backend-queue';
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 
@@ -18,6 +19,7 @@ import { ConfigModule } from '@nestjs/config';
     BackendCommonsModule,
     BackendPlatformModule,
     BackendDatabaseModule,
+    BackendQueueModule.registerAsBoth(),
   ],
   controllers: [],
   providers: [],
