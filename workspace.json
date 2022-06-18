@@ -6,6 +6,7 @@
     "backend-lib-database": "packages/backend/lib/database",
     "backend-lib-platform": "packages/backend/lib/platform",
     "backend-lib-queue": "packages/backend/lib/queue",
+    "backend-lib-user": "packages/backend/lib/user",
     "node-lib-commons": "packages/node/lib/commons",
     "node-lib-grundel": "packages/node/lib/grundel"
   }

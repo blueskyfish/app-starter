@@ -25,6 +25,7 @@
         "packages/backend/lib/platform/src/index.ts"
       ],
       "@blueskyfish/backend-queue": ["packages/backend/lib/queue/src/index.ts"],
+      "@blueskyfish/backend-user": ["packages/backend/lib/user/src/index.ts"],
       "@blueskyfish/commons": ["packages/node/lib/commons/src/index.ts"],
       "@blueskyfish/grundel": ["packages/node/lib/grundel/src/index.ts"]
     }
