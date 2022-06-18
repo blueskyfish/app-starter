@@ -27,6 +27,11 @@ export async function bootstrap(options: BootstrapOptions): Promise<void> {
     skipMissingProperties: true,
   }));
 
+  if (options.production) {
+    // use only this log levels
+    app.useLogger(['log', 'error','warn']);
+  }
+
   if (!options.production) {
     // (only on dev stage) Open API Configuration
     const openApiOptions = new DocumentBuilder()
