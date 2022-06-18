@@ -1,4 +1,8 @@
-
+#
+# Docker file for backend UserApi
+#
+# <https://blog.nrwl.io/nx-and-node-microservices-b6df3cd1bad6>
+#
 FROM node:16-alpine
 
 WORKDIR /app
