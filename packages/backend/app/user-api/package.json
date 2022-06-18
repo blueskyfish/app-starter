@@ -1,0 +1,6 @@
+{
+  "name": "@blueskyfish/backend-user-api",
+  "version": "0.0.1",
+  "description": "Backend für user management",
+  "license": "MIT"
+}

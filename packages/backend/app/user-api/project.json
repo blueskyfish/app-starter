@@ -3,6 +3,16 @@
   "sourceRoot": "packages/backend/app/user-api/src",
   "projectType": "application",
   "targets": {
+    "deploy": {
+      "builder": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx run backend-app-user-api:build:production",
+          "docker build -f ./packages/backend/app/user-api/Dockerfile ./dist -t blueskyfish/backend-user-api"
+        ],
+        "parallel": false
+      }
+    },
     "build": {
       "executor": "@nrwl/node:webpack",
       "outputs": [
@@ -14,12 +24,13 @@
         "tsConfig": "packages/backend/app/user-api/tsconfig.app.json",
         "assets": [
           "packages/backend/app/user-api/src/assets"
-        ]
+        ],
+        "generatePackageJson": true
       },
       "configurations": {
         "production": {
           "optimization": true,
-          "extractLicenses": true,
+          "extractLicenses": false,
           "inspect": false,
           "fileReplacements": [
             {

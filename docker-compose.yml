@@ -1,0 +1,17 @@
+
+version: '3.8'
+
+services:
+  backend-user:
+    image: blueskyfish/backend-user-api
+    restart: unless-stopped
+    ports:
+      - "30050:28050"
+    volumes:
+      - ./etc/user-config.yml:/app/etc/config/user-config.yml
+    networks:
+      - app-starter-net
+
+networks:
+  app-starter-net:
+    driver: bridge
