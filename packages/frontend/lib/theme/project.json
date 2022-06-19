@@ -1,0 +1,41 @@
+{
+  "projectType": "library",
+  "sourceRoot": "packages/frontend/lib/theme/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/packages/frontend/lib/theme"],
+      "options": {
+        "project": "packages/frontend/lib/theme/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "packages/frontend/lib/theme/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "packages/frontend/lib/theme/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/frontend/lib/theme"],
+      "options": {
+        "jestConfig": "packages/frontend/lib/theme/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/frontend/lib/theme/**/*.ts",
+          "packages/frontend/lib/theme/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["frontend:lib"]
+}

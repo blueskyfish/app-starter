@@ -27,6 +27,16 @@
       "@blueskyfish/backend-queue": ["packages/backend/lib/queue/src/index.ts"],
       "@blueskyfish/backend-user": ["packages/backend/lib/user/src/index.ts"],
       "@blueskyfish/commons": ["packages/node/lib/commons/src/index.ts"],
+      "@blueskyfish/frontend-commons": [
+        "packages/frontend/lib/commons/src/index.ts"
+      ],
+      "@blueskyfish/frontend-dashboard": [
+        "packages/frontend/lib/dashboard/src/index.ts"
+      ],
+      "@blueskyfish/frontend-theme": [
+        "packages/frontend/lib/theme/src/index.ts"
+      ],
+      "@blueskyfish/frontend-user": ["packages/frontend/lib/user/src/index.ts"],
       "@blueskyfish/grundel": ["packages/node/lib/grundel/src/index.ts"]
     }
   },

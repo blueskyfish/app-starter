@@ -7,6 +7,12 @@
     "backend-lib-platform": "packages/backend/lib/platform",
     "backend-lib-queue": "packages/backend/lib/queue",
     "backend-lib-user": "packages/backend/lib/user",
+    "frontend-app-shell-app": "packages/frontend/app/shell-app",
+    "frontend-e2e-shell-app": "packages/frontend/e2e/shell-app",
+    "frontend-lib-commons": "packages/frontend/lib/commons",
+    "frontend-lib-dashboard": "packages/frontend/lib/dashboard",
+    "frontend-lib-theme": "packages/frontend/lib/theme",
+    "frontend-lib-user": "packages/frontend/lib/user",
     "node-lib-commons": "packages/node/lib/commons",
     "node-lib-grundel": "packages/node/lib/grundel"
   }

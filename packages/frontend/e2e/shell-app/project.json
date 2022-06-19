@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/frontend/e2e/shell-app/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "packages/frontend/e2e/shell-app/cypress.json",
+        "devServerTarget": "frontend-app-shell-app:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "frontend-app-shell-app:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/frontend/e2e/shell-app/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["frontend-app-shell-app"]
+}
