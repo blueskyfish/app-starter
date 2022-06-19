@@ -1,4 +1,6 @@
 
+![Blueskyfish - App Starter](docs/assets/logo/128x128.png)
+
 # Blueskyfish - App Starter
 
 > An application starter kit with <https://angular.io> and <https://docs.nestjs.com>.
@@ -119,7 +121,7 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
+## Notes / Copyrights
 
-
-
+* Icon from <a href="https://www.flaticon.com/de/kostenlose-icons/denke-mal-kreativ" title="denke mal kreativ Icons">Denke mal kreativ Icons erstellt von pojok d - Flaticon</a>
 
