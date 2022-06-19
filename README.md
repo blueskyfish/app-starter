@@ -97,6 +97,22 @@ db:
 ```
 
 
+## Design and Layout
+
+The frontend applications use the bootstrap css framework. The styles is defined in the directory `design`.
+
+### Style include to Frontend
+
+The angular frontend only needs to include in the whole styles and layout declarations of the **SCSS**.
+
+**styles.scss**
+
+```scss
+@import '../design/styles';
+```
+
+> Note: The webstorm IDE include scss files and directory from the project `node_modules`. The directory `design` is in the project root folder.
+
 
 ## Licence
 
