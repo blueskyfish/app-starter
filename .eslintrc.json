@@ -50,6 +50,12 @@
                 "onlyDependOnLibsWithTags": [
                   "frontend:lib", "node:lib"
                 ]
+              },
+              {
+                "sourceTag": "frontend:ui",
+                "onlyDependOnLibsWithTags": [
+                  "frontend:lib", "node:lib"
+                ]
               }
             ]
           }

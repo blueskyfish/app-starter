@@ -22,6 +22,7 @@ const views = [
 
     RouterModule.forChild([
       {
+        // abs-path: /user/login
         path: RouteName.Login,
         component: LoginViewComponent,
       }
