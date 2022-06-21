@@ -4,6 +4,16 @@
   "sourceRoot": "packages/frontend/app/shell-app/src",
   "prefix": "app",
   "targets": {
+    "deploy": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx run frontend-app-shell-app:build:production",
+          "docker build -f ./packages/frontend/app/shell-app/Dockerfile ./dist -t blueskyfish/frontend-shell-app"
+        ],
+        "parallel": false
+      }
+    },
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],

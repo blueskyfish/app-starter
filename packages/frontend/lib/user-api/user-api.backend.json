@@ -1,0 +1,12 @@
+{
+  "$schema": "../../../../node_modules/ng-openapi-gen/ng-openapi-gen-schema.json",
+  "input": "http://localhost:28050/openapi.json",
+  "output": "packages/frontend/lib/user-api/src/lib",
+  "module": "FrontendUserApiModule",
+  "serviceSuffix": "ApiService",
+  "indexFile": true,
+  "modelIndex": false,
+  "serviceIndex": false,
+  "configuration": "ServerConfiguration",
+  "response": "UserHttpResponse"
+}

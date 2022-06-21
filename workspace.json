@@ -13,6 +13,7 @@
     "frontend-lib-dashboard": "packages/frontend/lib/dashboard",
     "frontend-lib-theme": "packages/frontend/lib/theme",
     "frontend-lib-user": "packages/frontend/lib/user",
+    "frontend-lib-user-api": "packages/frontend/lib/user-api",
     "node-lib-commons": "packages/node/lib/commons",
     "node-lib-grundel": "packages/node/lib/grundel"
   }

@@ -6,7 +6,8 @@
     "docker:build": "docker compose -f ./docker/docker-compose.dev.yml build --no-cache",
     "docker:serve": "docker compose -p app-starter -f ./docker/docker-compose.dev.yml up -d --quiet-pull",
     "docker:stop": "docker compose -p app-starter -f ./docker/docker-compose.dev.yml down",
-    "postinstall": "ngcc --properties es2020 browser module main"
+    "postinstall": "ngcc --properties es2020 browser module main",
+    "generate:user": "ng-openapi-gen --config packages/frontend/lib/user-api/user-api.backend.json"
   },
   "author": {
     "name": "Blueskyfish",
@@ -49,6 +50,7 @@
     "eslint-plugin-cypress": "^2.10.3",
     "jest": "27.5.1",
     "jest-preset-angular": "~11.1.2",
+    "ng-openapi-gen": "^0.21.2",
     "ng-packagr": "~14.0.0",
     "nx": "14.3.6",
     "postcss": "^8.4.5",
