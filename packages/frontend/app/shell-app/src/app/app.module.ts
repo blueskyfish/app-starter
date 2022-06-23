@@ -15,7 +15,7 @@ import { ROTES } from './app.routing';
     FrontendThemeModule,
     HttpClientModule,
 
-    RouterModule.forRoot(ROTES, { initialNavigation: 'enabledBlocking' }),
+    RouterModule.forRoot(ROTES, { initialNavigation: 'disabled' }),
 
     FrontendUserApiModule.forRoot({
       rootUrl: environment.userApiUrl,

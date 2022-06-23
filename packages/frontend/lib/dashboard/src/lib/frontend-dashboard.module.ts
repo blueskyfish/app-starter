@@ -3,6 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { AuthUserGuard } from '@blueskyfish/frontend-auth-util';
 import { DashboardViewComponent } from './view';
 
 const views = [
@@ -25,6 +26,9 @@ const views = [
         path: '',
         pathMatch: 'full',
         component: DashboardViewComponent,
+        canActivate: [
+          AuthUserGuard,
+        ]
       }
     ])
   ]

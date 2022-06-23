@@ -1,6 +1,8 @@
 
 export class RouteName {
 
+  static readonly Root = '/';
+
   static readonly Dashboard = 'dashboard';
 
   static readonly User = 'user';

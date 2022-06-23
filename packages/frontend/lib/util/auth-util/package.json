@@ -1,5 +1,5 @@
 {
-  "name": "@blueskyfish/frontend-user",
+  "name": "@blueskyfish/frontend-auth-util",
   "version": "0.0.1",
   "license": "MIT",
   "peerDependencies": {

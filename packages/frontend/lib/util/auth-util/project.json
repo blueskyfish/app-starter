@@ -1,0 +1,41 @@
+{
+  "projectType": "library",
+  "sourceRoot": "packages/frontend/lib/util/auth-util/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/packages/frontend/lib/util/auth-util"],
+      "options": {
+        "project": "packages/frontend/lib/util/auth-util/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "packages/frontend/lib/util/auth-util/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "packages/frontend/lib/util/auth-util/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/frontend/lib/util/auth-util"],
+      "options": {
+        "jestConfig": "packages/frontend/lib/util/auth-util/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/frontend/lib/util/auth-util/**/*.ts",
+          "packages/frontend/lib/util/auth-util/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["frontend:lib", "type:util"]
+}

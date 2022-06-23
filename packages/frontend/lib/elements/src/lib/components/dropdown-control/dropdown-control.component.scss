@@ -1,0 +1,15 @@
+@import "../design/app";
+
+.app-dropdown-control {
+  margin-bottom: .75rem;
+
+  &.inline {
+    margin-bottom: 0 !important;
+  }
+
+  .app-teaser {
+    font-size: 0.8rem;
+    font-style: italic;
+    padding-left: 1rem;
+  }
+}

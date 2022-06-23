@@ -1,10 +1,10 @@
 {
-  "name": "@blueskyfish/frontend-user",
+  "name": "@blueskyfish/frontend-elements",
   "version": "0.0.1",
-  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^14.0.0",
     "@angular/core": "^14.0.0",
+    "@angular/forms": "^14.0.0",
     "@ng-bootstrap/ng-bootstrap": "^12.1.2",
     "@popperjs/core": "^2.11.5",
     "bootstrap": "^5.1.3"
