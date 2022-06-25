@@ -4,8 +4,8 @@
 
 :root {
   --app-divide-color: var(--bs-gray-400);
-  --app-radius: 0.5rem;
-  --app-radius-sm: 0.25rem;
+  --app-radius: #{$gap-2};
+  --app-radius-sm: #{$gap-1};
 
   --app-dialog-bg: var(--bs-gray-200);
   --app-dialog-border: 1px solid var(--app-divide-color);

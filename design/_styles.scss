@@ -57,5 +57,8 @@
 // Material Icons
 @import "~@mdi/font/scss/materialdesignicons";
 
+// variables for application
+@import "tools/variables";
+
 // Add global application styles
 @import "global/index";

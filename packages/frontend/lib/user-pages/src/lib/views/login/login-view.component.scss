@@ -4,7 +4,7 @@
   background-color: var(--app-dialog-bg);
   width: 30rem;
   margin: 0 auto;
-  padding: 0.75rem;
+  padding: $gap-3;
   border: var(--app-dialog-border);
   border-radius: var(--app-radius);
 }
