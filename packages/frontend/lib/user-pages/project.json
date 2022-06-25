@@ -1,0 +1,42 @@
+{
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/frontend/lib/user-pages/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/packages/frontend/lib/user-pages"],
+      "options": {
+        "project": "packages/frontend/lib/user-pages/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "packages/frontend/lib/user-pages/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "packages/frontend/lib/user-pages/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/frontend/lib/user-pages"],
+      "options": {
+        "jestConfig": "packages/frontend/lib/user-pages/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/frontend/lib/user-pages/**/*.ts",
+          "packages/frontend/lib/user-pages/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["frontend:lib"]
+}

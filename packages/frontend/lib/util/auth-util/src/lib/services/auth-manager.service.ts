@@ -29,6 +29,11 @@ export class AuthManagerService {
     return this.storage.getItem(AUTH_USER_TOKEN) ?? '';
   }
 
+  /**
+   * Save the auth token of the current user.
+   *
+   * @param token the auth token
+   */
   login(token: string): void {
     if (!isEmpty(token)) {
       this.storage.setItem(AUTH_USER_TIMESTAMP, DateTime.now().toSQL());

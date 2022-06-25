@@ -5,21 +5,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LoginUserGuard } from '@blueskyfish/frontend-auth-util';
 import { RouteName } from '@blueskyfish/frontend-commons';
+import { FrontendElementsModule } from '@blueskyfish/frontend-elements';
+import { TranslocoModule } from '@ngneat/transloco';
 import { LoginViewComponent } from './views';
 
 const views = [
-  LoginViewComponent,
+  LoginViewComponent
 ];
 
 @NgModule({
-  declarations: [
-    ...views,
-  ],
+  declarations: [...views],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    TranslocoModule,
 
     RouterModule.forChild([
       {
@@ -28,14 +29,12 @@ const views = [
         component: LoginViewComponent,
         // FIXME The translation of the user login
         title: 'User Login',
-        canActivate: [
-          LoginUserGuard,
-        ]
-      }
-    ])
+        canActivate: [LoginUserGuard],
+      },
+    ]),
+
+    FrontendElementsModule,
   ],
-  exports: [
-    RouterModule,
-  ]
+  exports: [RouterModule],
 })
-export class FrontendUserModule {}
+export class FrontendUserPagesModule {}

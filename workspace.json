@@ -13,8 +13,9 @@
     "frontend-lib-dashboard": "packages/frontend/lib/dashboard",
     "frontend-lib-elements": "packages/frontend/lib/elements",
     "frontend-lib-theme": "packages/frontend/lib/theme",
-    "frontend-lib-user": "packages/frontend/lib/user",
     "frontend-lib-user-api": "packages/frontend/lib/user-api",
+    "frontend-lib-user-pages": "packages/frontend/lib/user-pages",
+    "frontend-lib-user-store": "packages/frontend/lib/user-store",
     "frontend-lib-util-auth-util": "packages/frontend/lib/util/auth-util",
     "node-lib-commons": "packages/node/lib/commons",
     "node-lib-grundel": "packages/node/lib/grundel"
