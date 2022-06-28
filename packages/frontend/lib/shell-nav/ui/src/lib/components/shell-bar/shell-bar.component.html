@@ -1,1 +1,15 @@
-<div class="app-global-bar"></div>
+<div class="app-shell-bar">
+  <nav class="app-button-bar flex-column">
+    <ng-container *ngFor="let action of items">
+      <button
+        type="button"
+        class="btn btn-outline-secondary d-flex align-items-center"
+        [class.active]="action.selected"
+        (click)="execute.emit(action)"
+      >
+        <i [ngClass]="action.icon" class="mdi-24px"></i>
+        <span class="ms-2" *ngIf="expanded">{{ action.title }}</span>
+      </button>
+    </ng-container>
+  </nav>
+</div>

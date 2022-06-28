@@ -1,1 +1,30 @@
 @import '../design/app';
+
+.app-shell-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: var(--app-shell-bar);
+
+  .app-button-bar {
+    display: flex;
+    height: 100%;
+
+    .btn {
+      border-color: var(--app-shell-button-border);
+      color: var(--app-shell-button-text);
+      margin: 0.25rem;
+
+      &:hover {
+        background-color: var(--app-shell-button-heighlight);
+        color: var(--app-shell-button-heighlight-text);
+      }
+
+      &.active {
+        background-color: var(--app-shell-button-active);
+        color: var(--app-shell-button-active-text);
+      }
+    }
+  }
+}

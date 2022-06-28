@@ -9,4 +9,12 @@
 
   --app-dialog-bg: var(--bs-gray-200);
   --app-dialog-border: 1px solid var(--app-divide-color);
+
+  --app-shell-bar: var(--bs-gray-900);
+  --app-shell-button-border: var(--bs-white);
+  --app-shell-button-text: var(--bs-white);
+  --app-shell-button-heighlight: var(--bs-gray-400);
+  --app-shell-button-heighlight-text: var(--bs-white);
+  --app-shell-button-active: #{$blue-100};
+  --app-shell-button-active-text: #{$blue-800} ;
 }

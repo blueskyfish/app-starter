@@ -5,15 +5,18 @@ import { FrontendThemeModule } from '@blueskyfish/frontend-theme';
 import { ShellBarComponent } from './components';
 
 @NgModule({
-  declarations: [
-    ShellBarComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
+    declarations: [
+        ShellBarComponent
+    ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
 
-    FrontendThemeModule,
-  ],
+        FrontendThemeModule,
+    ],
+    exports: [
+        ShellBarComponent
+    ]
 })
 export class FrontendShellBarUiModule {}

@@ -1,4 +1,8 @@
-<div class="container-fluid">
-  <h2>Shell</h2>
+<div class="app-container container-fluid">
+  <app-shell-bar
+    [items]="items"
+    (execute)="executeAction($event)"
+  >
+  </app-shell-bar>
   <router-outlet></router-outlet>
 </div>

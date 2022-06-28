@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { ShellBarItem } from '@blueskyfish/frontend-shell-nav-service';
 
 @Component({
   selector: 'app-shell-bar',
@@ -7,7 +8,18 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class ShellBarComponent implements OnInit {
+
+  expanded = false;
+
+  @Input()
+  items!: ShellBarItem[];
+
+  @Output()
+  execute: EventEmitter<ShellBarItem> = new EventEmitter<ShellBarItem>(true);
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 }

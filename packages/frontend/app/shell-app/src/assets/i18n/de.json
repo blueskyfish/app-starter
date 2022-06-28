@@ -2,5 +2,9 @@
   "app.user.pages.login.title": "Anmelden",
   "app.user.pages.login.email.label": "E-Mail",
   "app.user.pages.login.password.label": "Passwort",
-  "app.user.pages.login.button.okay.label": "Anmelden"
+  "app.user.pages.login.button.okay.label": "Anmelden",
+  "app.shell-bar.action.login.title": "Anmelden",
+  "app.shell-bar.action.logout.title": "Abmelden",
+  "app.shell-bar.action.user.title": "Dein Profile",
+  "app.shell-bar.action.about.title": "Über..."
 }
