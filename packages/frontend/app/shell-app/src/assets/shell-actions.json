@@ -1,0 +1,22 @@
+{
+  "login": {
+    "icon": "",
+    "title": "",
+    "permission": ""
+  },
+  "logout": {
+    "icon": "",
+    "title": "",
+    "permission": "user"
+  },
+  "user": {
+    "icon": "",
+    "title": "",
+    "permission": "user"
+  },
+  "about": {
+    "icon": "",
+    "title": "",
+    "permission": ""
+  }
+}

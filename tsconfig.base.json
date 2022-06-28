@@ -39,17 +39,26 @@
       "@blueskyfish/frontend-elements": [
         "packages/frontend/lib/elements/src/index.ts"
       ],
+      "@blueskyfish/frontend-shell-nav-service": [
+        "packages/frontend/lib/shell-nav/service/src/index.ts"
+      ],
+      "@blueskyfish/frontend-shell-nav-store": [
+        "packages/frontend/lib/shell-nav/store/src/index.ts"
+      ],
+      "@blueskyfish/frontend-shell-nav-ui": [
+        "packages/frontend/lib/shell-nav/ui/src/index.ts"
+      ],
       "@blueskyfish/frontend-theme": [
         "packages/frontend/lib/theme/src/index.ts"
+      ],
+      "@blueskyfish/frontend-user-api": [
+        "packages/frontend/lib/user-api/src/index.ts"
       ],
       "@blueskyfish/frontend-user-pages": [
         "packages/frontend/lib/user-pages/src/index.ts"
       ],
       "@blueskyfish/frontend-user-store": [
         "packages/frontend/lib/user-store/src/index.ts"
-      ],
-      "@blueskyfish/frontend-user-api": [
-        "packages/frontend/lib/user-api/src/index.ts"
       ],
       "@blueskyfish/grundel": ["packages/node/lib/grundel/src/index.ts"]
     }

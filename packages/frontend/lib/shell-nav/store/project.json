@@ -1,0 +1,42 @@
+{
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/frontend/lib/shell-nav/store/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/packages/frontend/lib/shell-nav/store"],
+      "options": {
+        "project": "packages/frontend/lib/shell-nav/store/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "packages/frontend/lib/shell-nav/store/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "packages/frontend/lib/shell-nav/store/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/frontend/lib/shell-nav/store"],
+      "options": {
+        "jestConfig": "packages/frontend/lib/shell-nav/store/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/frontend/lib/shell-nav/store/**/*.ts",
+          "packages/frontend/lib/shell-nav/store/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["type:global", "type:store", "frontend:lib"]
+}

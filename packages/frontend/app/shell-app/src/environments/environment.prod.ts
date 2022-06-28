@@ -4,5 +4,11 @@ export const environment = {
   /**
    * TODO: Adjust => Root URL for the backend "UserApi"
    */
-  userApiUrl: '??'
+  userApiUrl: '??',
+
+
+  /**
+   * TODO: The url for the shell action
+   */
+  actionUrl: '??',
 };

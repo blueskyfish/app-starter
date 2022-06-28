@@ -1,10 +1,13 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { FrontendShellBarServiceModule } from '@blueskyfish/frontend-shell-nav-service';
+import { FrontendShellBarStoreModule } from '@blueskyfish/frontend-shell-nav-store';
+import { FrontendShellBarUiModule } from '@blueskyfish/frontend-shell-nav-ui';
 import { FrontendThemeModule } from '@blueskyfish/frontend-theme';
 import { FrontendUserApiModule } from '@blueskyfish/frontend-user-api';
-import { FrontendUserStoreModule, UserEffects } from '@blueskyfish/frontend-user-store';
+import { FrontendUserStoreModule } from '@blueskyfish/frontend-user-store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -21,9 +24,14 @@ import { ROTES } from './app.routing';
     BrowserModule,
     FrontendThemeModule,
     HttpClientModule,
+    FrontendShellBarServiceModule,
+    FrontendShellBarStoreModule.forRoot({ actionUrl: environment.actionUrl }),
+    FrontendShellBarUiModule,
+
     RouterModule.forRoot(ROTES, {initialNavigation: 'disabled'}),
     StoreModule.forRoot({}),
     ...(environment.production ? [] : [ StoreDevtoolsModule.instrument(devConfig) ]),
+    EffectsModule.forRoot([]),
 
     AppTanslateModule,
 
@@ -31,10 +39,6 @@ import { ROTES } from './app.routing';
       rootUrl: environment.userApiUrl,
     }),
     FrontendUserStoreModule,
-
-    EffectsModule.forRoot([
-      UserEffects,
-    ])
   ],
   providers: [],
   bootstrap: [ AppComponent ],

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { LoginPayload } from '@blueskyfish/frontend-user-api';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import * as UserActions from './user.actions';
+import { UserActions } from './user.actions';
 import { UserName } from './user.models';
 import { UserPartialState } from './user.reducer';
 import { selectUserName } from './user.selectors';

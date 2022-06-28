@@ -1,6 +1,6 @@
 import { UserInfo } from '@blueskyfish/frontend-user-api';
 import { createReducer, on } from '@ngrx/store';
-import * as UsersActions from './user.actions';
+import { UserActions } from './user.actions';
 
 export const userFeatureKey = 'users';
 
@@ -21,7 +21,7 @@ export const initialState: UserState = {
 
 export const userReducer = createReducer(
   initialState,
-  on(UsersActions.userUploadInfo, (state, { user }) => ({
+  on(UserActions.updateUserInfo, (state, { user }) => ({
     ...state,
     user,
   }))

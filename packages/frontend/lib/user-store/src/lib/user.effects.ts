@@ -1,28 +1,28 @@
 import { Injectable } from '@angular/core';
 import { AuthManagerService } from '@blueskyfish/frontend-auth-util';
 import { LoginUser, UserApiService, UserInfo } from '@blueskyfish/frontend-user-api';
-import { Actions, createEffect, ofType, ROOT_EFFECTS_INIT } from '@ngrx/effects';
-
-import { catchError, concatMap, map, switchMap } from 'rxjs/operators';
-import { Observable, EMPTY } from 'rxjs';
-import * as UsersActions from './user.actions';
+import { Actions, createEffect, ofType, OnInitEffects, ROOT_EFFECTS_INIT } from '@ngrx/effects';
+import { Action } from '@ngrx/store';
+import { EMPTY } from 'rxjs';
+import { catchError, map, switchMap } from 'rxjs/operators';
+import { UserActions } from './user.actions';
 
 @Injectable({providedIn: 'root'})
-export class UserEffects {
+export class UserEffects implements OnInitEffects {
 
   readonly initUser$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(ROOT_EFFECTS_INIT),
+      ofType(UserActions.initialUser),
       switchMap(() => {
         if (this.authManager.hasToken) {
           return this.userApi.getUserInfo()
             .pipe(
-              map((user: UserInfo) => UsersActions.userUploadInfo({user}))
-            )
+              map((user: UserInfo) => UserActions.updateUserInfo({user}))
+            );
         }
         return EMPTY;
       })
-    )
+    );
   });
 
   /**
@@ -31,10 +31,10 @@ export class UserEffects {
    * In case of success, the user is logged in and
    */
   readonly sendLogin$ = createEffect(() => {
-    return  this.actions$.pipe(
-      ofType(UsersActions.userSendLogin),
-      switchMap(({ body }) => {
-        return this.userApi.loginUser({ body })
+    return this.actions$.pipe(
+      ofType(UserActions.userSendLogin),
+      switchMap(({body}) => {
+        return this.userApi.loginUser({body})
           .pipe(
             map((result: LoginUser) => {
               const user: UserInfo = {
@@ -45,7 +45,7 @@ export class UserEffects {
               };
               this.authManager.login(result.token);
               // TODO Action for redirect to "Dashboard"
-              return UsersActions.userUploadInfo({ user });
+              return UserActions.updateUserInfo({user});
             }),
             catchError((err) => {
               // TODO Prepare the error
@@ -53,12 +53,17 @@ export class UserEffects {
             })
           );
       })
-    )
-  })
+    );
+  });
 
   constructor(
     private actions$: Actions,
     private authManager: AuthManagerService,
     private userApi: UserApiService,
-    ) {}
+  ) {
+  }
+
+  ngrxOnInitEffects(): Action {
+    return UserActions.initialUser();
+  }
 }
