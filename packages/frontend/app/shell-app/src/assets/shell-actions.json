@@ -1,22 +1,22 @@
 {
   "login": {
-    "icon": "",
-    "title": "",
+    "icon": "mdi mdi-login",
+    "title": "app.shell-bar.action.login.title",
     "permission": ""
   },
   "logout": {
-    "icon": "",
-    "title": "",
-    "permission": "user"
+    "icon": "mdi mdi-logout",
+    "title": "app.shell-bar.action.logout.title",
+    "permission": ""
   },
   "user": {
-    "icon": "",
-    "title": "",
-    "permission": "user"
+    "icon": "mdi mdi-account-outline",
+    "title": "app.shell-bar.action.user.title",
+    "permission": "app:user"
   },
   "about": {
-    "icon": "",
-    "title": "",
+    "icon": "mdi mdi-nformation-outline",
+    "title": "app.shell-bar.action.about.title",
     "permission": ""
   }
 }

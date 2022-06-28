@@ -63,7 +63,7 @@ export class RegisterService {
 
           const permData: DbUserPermission = {
             userId,
-            permissions: JSON.stringify([Permission.User]),
+            permissions: JSON.stringify([Permission.AppUser]),
           };
           await userRepo.updateUserPermissions(permData);
 
