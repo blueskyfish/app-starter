@@ -1,15 +1,26 @@
-<div class="app-shell-bar">
+<div class="app-shell-bar" *ngIf="hasItems">
   <nav class="app-button-bar flex-column">
     <ng-container *ngFor="let action of items">
-      <button
-        type="button"
-        class="btn btn-outline-secondary d-flex align-items-center"
-        [class.active]="action.selected"
-        (click)="execute.emit(action)"
-      >
-        <i [ngClass]="action.icon" class="mdi-24px"></i>
-        <span class="ms-2" *ngIf="expanded">{{ action.title }}</span>
-      </button>
+      <ng-container *ngIf="action !== '-'; else divider">
+        <ng-container
+          [ngTemplateOutlet]="button"
+          [ngTemplateOutletContext]="{$implicit: action}"
+        ></ng-container>
+      </ng-container>
     </ng-container>
+    <ng-template #divider>
+      <div class="app-divider"></div>
+    </ng-template>
   </nav>
 </div>
+<ng-template #button let-action>
+  <button
+    type="button"
+    class="btn btn-outline-secondary d-flex align-items-center"
+    [class.active]="action?.selected"
+    (click)="execute.emit(action)"
+  >
+    <i [ngClass]="action?.icon" class="mdi-24px"></i>
+    <span class="ms-2" *ngIf="expanded">{{ action?.title || '' }}</span>
+  </button>
+</ng-template>

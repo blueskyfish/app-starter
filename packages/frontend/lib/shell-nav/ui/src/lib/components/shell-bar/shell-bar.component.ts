@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
-import { ShellBarItem } from '@blueskyfish/frontend-shell-nav-service';
+import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
+import { ShellBarItem, ShellBarItemList } from '@blueskyfish/frontend-shell-nav-service';
+import { isEmpty } from '@blueskyfish/grundel';
 
 @Component({
   selector: 'app-shell-bar',
@@ -7,19 +8,20 @@ import { ShellBarItem } from '@blueskyfish/frontend-shell-nav-service';
   styleUrls: ['./shell-bar.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class ShellBarComponent implements OnInit {
+export class ShellBarComponent {
 
   expanded = false;
 
+  /**
+   * The list of shell bar items.
+   */
   @Input()
-  items!: ShellBarItem[];
+  items!: ShellBarItemList;
 
   @Output()
   execute: EventEmitter<ShellBarItem> = new EventEmitter<ShellBarItem>(true);
 
-  constructor() {}
-
-  ngOnInit(): void {
-
+  get hasItems(): boolean {
+    return !isEmpty(this.items);
   }
 }
